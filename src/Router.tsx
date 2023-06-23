@@ -3,9 +3,11 @@ import { Home } from './pages/Home';
 import { DefaultLayout } from './layouts/DefaultLayout';
 
 export function Router() {
+  const base = import.meta.env.BASE_URL
+
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: base,
       element: <DefaultLayout />,
       children: [
         {
