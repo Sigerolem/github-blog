@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors['base-background']};
   }
   
-  body, a {
+  body, a, input {
     color: ${({ theme }) => theme.colors['base-text']};
     font: ${({ theme }) => theme.textSizes['text-m']} Nunito, sans-serif; 
     font-weight: 400;
@@ -39,6 +39,10 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  :focus {
+    outline: 0;
+    box-shadow: 0 0 0px 2px ${({ theme }) => theme.colors['brand-blue']}; 
+  }
 
 `
 
