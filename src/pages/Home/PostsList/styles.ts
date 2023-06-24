@@ -36,7 +36,7 @@ export const SerchForm = styled.form`
   }
 `
 
-export const PostsContainer = styled.div`
+export const PostsContainer = styled.section`
   margin-top: 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;

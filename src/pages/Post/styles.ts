@@ -3,14 +3,9 @@ import styled from 'styled-components';
 export const PostContainer = styled.div`
   width: 100%;
   max-width: 54rem;
-  margin: -5rem 1rem 6rem;
-  
-  /* display: flex;
-  flex-direction: column; */
-  `
+`
 
 export const PostHeader = styled.div`
-  width: 100%;
   background: ${({ theme }) => theme.colors['base-profile']}; 
   padding: 2rem 2rem 2rem 2.5rem;
   border-radius: 10px;
@@ -58,4 +53,9 @@ export const PostHeader = styled.div`
       /* font-size: ${({ theme }) => theme.textSizes['text-m']}; */
     }
   }
+`
+
+export const ContentContainer = styled.section`
+  width: 100%;
+  padding-bottom: 2rem;
 `

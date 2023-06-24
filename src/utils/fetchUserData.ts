@@ -15,16 +15,14 @@ export async function fetchUserData() {
   if (
     lastFetch !== null &&
     lastUserData !== null &&
-    differenceInSeconds(new Date(), new Date(lastFetch)) < 20
+    differenceInSeconds(new Date(), new Date(lastFetch)) < 60
   ) {
     return JSON.parse(lastUserData) as ResponseData
   }
 
-  const response = await fetch('https://api.github.com/users/Sigerolem')
-    .then(response => response.json())
-    .then((data: ResponseData) => data)
+  const data = await (await fetch('https://api.github.com/users/Sigerolem')).json()
 
-  const { bio, company, followers, login, name } = response
+  const { bio, company, followers, login, name } = data as ResponseData
   const newUserData = { bio, company, followers, login, name }
 
   localStorage.setItem('github_blog_last_fetch', (new Date()).toISOString())

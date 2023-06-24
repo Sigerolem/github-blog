@@ -1,11 +1,32 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { PostContainer, PostHeader } from './styles';
+import { ContentContainer, PostContainer, PostHeader } from './styles';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faArrowUpRightFromSquare, faCalendarDay, faChevronLeft, faComment } from '@fortawesome/free-solid-svg-icons';
 import { BrandLink } from '../../components/BrandLink';
-import { LoaderFunctionArgs } from 'react-router-dom';
+import { LoaderFunctionArgs, useLoaderData } from 'react-router-dom';
+import { formatDistanceToNowStrict } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+
+interface ApiResponse {
+  title: string,
+  user: {
+    login: string
+  },
+  created_at: string,
+  comments: number,
+  body: string,
+  html_url: string
+}
 
 export function Post() {
+  const { body, comments, createdAt, htmlUrl, title, user } = useLoaderData() as Awaited<ReturnType<typeof postLoader>>
+
+  const formatedDate = formatDistanceToNowStrict(new Date(createdAt), {
+    locale: ptBR,
+    addSuffix: true
+  })
+
   return (
     <PostContainer>
       <PostHeader >
@@ -14,33 +35,46 @@ export function Post() {
             <FontAwesomeIcon icon={faChevronLeft} />
             VOLTAR
           </BrandLink>
-          <BrandLink href="" target='_blank'>
+          <BrandLink href={htmlUrl} target='_blank'>
             GITHUB
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </BrandLink>
         </header>
-        <h1>Txto aqui que é titulo do post e é grande o suficiente pra quebrar uma linha nesse tamanho pq não cabe tudo numa linha</h1>
+        <h1>{title}</h1>
         <ul>
           <li>
             <FontAwesomeIcon icon={faGithub} />
-            <span>Sigerolem</span>
+            <span>{user.login}</span>
           </li>
           <li>
             <FontAwesomeIcon icon={faCalendarDay} />
-            <span>há 2 dias</span>
+            <span>{formatedDate}</span>
           </li>
           <li>
             <FontAwesomeIcon icon={faComment} />
-            <span>3 comentários</span>
+            <span>{comments} comentários</span>
           </li>
         </ul>
       </PostHeader>
+      <ContentContainer >
+        <h2>hi</h2>
+      </ContentContainer>
     </PostContainer>
   )
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
-export function postLoader({ params }: LoaderFunctionArgs) {
-  console.log(params)
-  return ''
+export async function postLoader({ params }: LoaderFunctionArgs) {
+  const id = params.id as string
+  const data = (await (await fetch(`https://api.github.com/repos/sigerolem/github-blog/issues/${id}`)).json() as ApiResponse)
+
+  const { body, comments, created_at, html_url, title, user } = data;
+  return {
+    title,
+    body,
+    comments,
+    user,
+    createdAt: created_at,
+    htmlUrl: html_url
+  }
 }
