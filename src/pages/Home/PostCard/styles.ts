@@ -31,13 +31,13 @@ export const CardContainer = styled.div`
   
   p {
     overflow: hidden;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 4; */
     
-    /* max-height: 7.75rem; */
-    /* &::after{
+    max-height: 7.75rem;
+    &::after{
       content: '';
       width: 100%;
       height: 1.6rem;
@@ -45,6 +45,6 @@ export const CardContainer = styled.div`
       position: absolute;
       bottom: 1.75rem;
       left: 0;
-    } */
+    }
   }
 `

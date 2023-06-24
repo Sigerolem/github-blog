@@ -2,7 +2,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ProfileContainer, ProfileImg, ProfileInfo } from './styles';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserGroup, faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { faUserGroup, faBuilding, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 export function Profile() {
   return (
@@ -11,7 +11,10 @@ export function Profile() {
       <ProfileInfo>
         <header>
           <h1>Cameron Williansom</h1>
-          <a href="">GITHUB</a>
+          <a href="">
+            GITHUB
+            <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+          </a>
         </header>
         <p>Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</p>
         <ul>

@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { DefaultLayout } from './layouts/DefaultLayout';
+import { Post } from './pages/Post';
 
 export function Router() {
   const base = import.meta.env.BASE_URL
@@ -13,6 +14,10 @@ export function Router() {
         {
           index: true,
           element: <Home />,
+        },
+        {
+          path: `${base}/post/:id`,
+          element: <Post />
         }
       ]
     }

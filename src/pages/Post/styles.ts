@@ -1,29 +1,24 @@
 import styled from 'styled-components';
 
-export const ProfileContainer = styled.div`
+export const PostContainer = styled.div`
+  width: 100%;
+  max-width: 54rem;
+  margin: -5rem 1rem 6rem;
+  
+  /* display: flex;
+  flex-direction: column; */
+  `
+
+export const PostHeader = styled.div`
+  width: 100%;
   background: ${({ theme }) => theme.colors['base-profile']}; 
   padding: 2rem 2rem 2rem 2.5rem;
   border-radius: 10px;
   box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.20);
 
-  display: flex;
-  gap: 2rem;
-`
-
-export const ProfileImg = styled.img`
-  height: 9.125rem;  
-  border-radius: 8px;
-`
-
-export const ProfileInfo = styled.div`
-  padding-top: .5rem;
-  display: flex;
-  flex-direction: column;
-
   header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
     a {
       display: flex;
@@ -31,18 +26,20 @@ export const ProfileInfo = styled.div`
       gap: .5rem;
       line-height: 0;
       padding-bottom: .25rem;
-    }
+    } 
   }
 
-  p {
-    margin: 0.5rem 0 auto;
+  h1 {
+    margin-top: 1.25rem;  
   }
 
   ul {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 2rem;
+    margin-top: 0.5rem;
+    height: 1.625rem;
   }
 
   li {
@@ -57,7 +54,8 @@ export const ProfileInfo = styled.div`
     
     span {
       line-height: 0;
-      color: ${({ theme }) => theme.colors['base-subtitle']};
+      color: ${({ theme }) => theme.colors['base-span']};
+      /* font-size: ${({ theme }) => theme.textSizes['text-m']}; */
     }
   }
 `

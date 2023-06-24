@@ -27,6 +27,7 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.colors['brand-blue']};
+    font-size: ${({ theme }) => theme.textSizes['link']};
     font-weight: 700;
     display: flex;
     align-items: center;
