@@ -1,9 +1,9 @@
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { ProfileContainer, ProfileImg, ProfileInfo } from './styles';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserGroup, faBuilding, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { BrandLink } from '../../../components/BrandLink';
+import { ProfileContainer, ProfileImg, ProfileInfo } from './styles';
 
 type UserData = {
   bio: string;
@@ -24,7 +24,7 @@ export function Profile({ userData: { bio, company, followers, login, name } }: 
       <ProfileInfo>
         <header>
           <h1>{name}</h1>
-          <BrandLink href="">
+          <BrandLink href="https://github.com/sigerolem" target="_blank">
             GITHUB
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </BrandLink>

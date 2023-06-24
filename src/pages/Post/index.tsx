@@ -1,12 +1,16 @@
+import { LoaderFunctionArgs, useLoaderData } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ContentContainer, PostContainer, PostHeader } from './styles';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faArrowUpRightFromSquare, faCalendarDay, faChevronLeft, faComment } from '@fortawesome/free-solid-svg-icons';
-import { BrandLink } from '../../components/BrandLink';
-import { LoaderFunctionArgs, useLoaderData } from 'react-router-dom';
+
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+
 import { formatDistanceToNowStrict } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+
+import { BrandLink } from '../../components/BrandLink';
+import { ContentContainer, PostContainer, PostHeader } from './styles';
 
 interface ApiResponse {
   title: string,
@@ -57,7 +61,10 @@ export function Post() {
         </ul>
       </PostHeader>
       <ContentContainer >
-        <h2>hi</h2>
+        <ReactMarkdown
+          children={body}
+          linkTarget={'_blank'}
+        />
       </ContentContainer>
     </PostContainer>
   )

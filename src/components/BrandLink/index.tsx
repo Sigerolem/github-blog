@@ -1,6 +1,8 @@
-import { useNavigate } from 'react-router-dom';
-import { AnchorComponent } from './styles';
 import { AnchorHTMLAttributes } from 'react';
+
+import { useNavigate } from 'react-router-dom';
+
+import { AnchorComponent } from './styles';
 
 interface BrandLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;

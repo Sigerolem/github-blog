@@ -1,7 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import { CardContainer } from './styles';
+
 import { formatDistanceToNowStrict } from 'date-fns'
 import { ptBR } from 'date-fns/locale';
+
+import { CardContainer } from './styles';
 
 type IssueType = {
   id: number;

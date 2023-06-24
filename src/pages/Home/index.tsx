@@ -1,4 +1,5 @@
 import { useLoaderData } from 'react-router-dom';
+
 import { fetchPosts } from '../../utils/fetchPosts';
 import { fetchUserData } from '../../utils/fetchUserData';
 import { PostsList } from './PostsList';

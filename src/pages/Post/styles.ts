@@ -50,12 +50,40 @@ export const PostHeader = styled.div`
     span {
       line-height: 0;
       color: ${({ theme }) => theme.colors['base-span']};
-      /* font-size: ${({ theme }) => theme.textSizes['text-m']}; */
     }
   }
 `
 
 export const ContentContainer = styled.section`
   width: 100%;
-  padding-bottom: 2rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h1, h2, h3 {
+    color: ${({ theme }) => theme.colors['base-title']};
+  }
+  
+  a {
+    color: ${({ theme }) => theme.colors['brand-blue']};
+  }
+
+  img {
+    width: 100%;
+  }
+
+  pre {
+    background-color: ${({ theme }) => theme.colors['base-post']};
+    padding: 0.5rem;
+    border-radius: 6px;
+  }
+
+  em {
+    
+  }
+
+  ul, ol {
+    margin-left: 1.25rem;
+  }
 `

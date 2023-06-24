@@ -1,7 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
+
+import { PostCard } from '../PostCard'
 import { PostsContainer, SerchForm } from './styles'
 import { UserDataType, fetchPosts } from '../../../utils/fetchPosts'
-import { PostCard } from '../PostCard'
 
 interface PostsListProps {
   postsData: UserDataType
