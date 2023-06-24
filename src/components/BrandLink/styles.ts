@@ -7,11 +7,12 @@ export const AnchorComponent = styled.a`
   font-weight: 700;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
 
-  transition: border .4s;
+  transition: border .3s;
   
   &:hover {
-    border-bottom: 1px solid ${({ theme }) => theme.colors['brand-blue']};
+    border-bottom: 2px solid ${({ theme }) => theme.colors['brand-blue']};
   }
 `
