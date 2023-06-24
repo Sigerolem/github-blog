@@ -3,6 +3,7 @@ import { PostContainer, PostHeader } from './styles';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faArrowUpRightFromSquare, faCalendarDay, faChevronLeft, faComment } from '@fortawesome/free-solid-svg-icons';
 import { BrandLink } from '../../components/BrandLink';
+import { LoaderFunctionArgs } from 'react-router-dom';
 
 export function Post() {
   return (
@@ -36,4 +37,10 @@ export function Post() {
       </PostHeader>
     </PostContainer>
   )
+}
+
+// eslint-disable-next-line react-refresh/only-export-components
+export function postLoader({ params }: LoaderFunctionArgs) {
+  console.log(params)
+  return ''
 }
