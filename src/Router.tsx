@@ -20,6 +20,10 @@ export function Router() {
           path: `${base}/post/:id`,
           element: <Post />,
           loader: postLoader
+        },
+        {
+          path: '*',
+          element: <h1>Hello</h1>
         }
       ]
     }
