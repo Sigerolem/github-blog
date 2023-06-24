@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 import { Home, homeLoader } from './pages/Home';
 import { DefaultLayout } from './layouts/DefaultLayout';
 import { Post, postLoader } from './pages/Post';
@@ -6,7 +6,7 @@ import { Post, postLoader } from './pages/Post';
 export function Router() {
   const base = import.meta.env.BASE_URL
 
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: base,
       element: <DefaultLayout />,
@@ -22,8 +22,8 @@ export function Router() {
           loader: postLoader
         },
         {
-          path: '*',
-          element: <h1>Hello</h1>
+          path: `${base}/*`,
+          element: <h1>Erro, rota errada</h1>
         }
       ]
     }
