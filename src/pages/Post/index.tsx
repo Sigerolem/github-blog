@@ -4,7 +4,6 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faArrowUpRightFromSquare, faCalendarDay, faChevronLeft, faComment } from '@fortawesome/free-solid-svg-icons';
 import { BrandLink } from '../../components/BrandLink';
 
-
 export function Post() {
   return (
     <PostContainer>
