@@ -20,7 +20,7 @@ export async function fetchUserData() {
     return JSON.parse(lastUserData) as ResponseData
   }
 
-  const response = await fetch('http://api.github.com/users/Sigerolem')
+  const response = await fetch('https://api.github.com/users/Sigerolem')
     .then(response => response.json())
     .then((data: ResponseData) => data)
 
