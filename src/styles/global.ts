@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     font: ${({ theme }) => theme.textSizes['text-m']} Nunito, sans-serif; 
     font-weight: 400;
     line-height: 1.6;  
+    text-decoration: none;
   }
   
   h1 {
@@ -23,27 +24,10 @@ export const GlobalStyle = createGlobalStyle`
     font-size: ${({ theme }) => theme.textSizes['title-l']};
     line-height: 1.3;
   }
-  
-  a {
-    text-decoration: none;
-    color: ${({ theme }) => theme.colors['brand-blue']};
-    font-size: ${({ theme }) => theme.textSizes['link']};
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid transparent;
-
-    transition: border .4s;
-    
-    &:hover {
-      border-bottom: 1px solid ${({ theme }) => theme.colors['brand-blue']};
-    }
-  }
 
   :focus {
     outline: 0;
     box-shadow: 0 0 0px 2px ${({ theme }) => theme.colors['brand-blue']}; 
   }
-
 `
 

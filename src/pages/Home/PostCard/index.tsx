@@ -1,8 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import { CardContainer } from './styles';
 
+
+
 export function PostCard() {
+  const navigate = useNavigate()
+
   return (
-    <CardContainer >
+    <CardContainer onClick={() => { navigate('post/2') }} >
       <header>
         <h2>JavaScript data types and data structures</h2>
         <span>há 1 dia</span>

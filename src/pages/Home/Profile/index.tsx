@@ -3,18 +3,19 @@ import { ProfileContainer, ProfileImg, ProfileInfo } from './styles';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserGroup, faBuilding, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { BrandLink } from '../../../components/BrandLink';
 
 export function Profile() {
   return (
     <ProfileContainer>
-      <ProfileImg src="http://github.com/sigerolem.png" />
+      <ProfileImg src="https://github.com/sigerolem.png" />
       <ProfileInfo>
         <header>
           <h1>Cameron Williansom</h1>
-          <a href="">
+          <BrandLink href="">
             GITHUB
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-          </a>
+          </BrandLink>
         </header>
         <p>Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</p>
         <ul>

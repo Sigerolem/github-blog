@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PostContainer, PostHeader } from './styles';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faArrowUpRightFromSquare, faCalendarDay, faChevronLeft, faComment } from '@fortawesome/free-solid-svg-icons';
+import { BrandLink } from '../../components/BrandLink';
 
 
 export function Post() {
@@ -9,14 +10,14 @@ export function Post() {
     <PostContainer>
       <PostHeader >
         <header >
-          <a href="">
+          <BrandLink href="-1">
             <FontAwesomeIcon icon={faChevronLeft} />
             VOLTAR
-          </a>
-          <a href="">
+          </BrandLink>
+          <BrandLink href="" target='_blank'>
             GITHUB
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-          </a>
+          </BrandLink>
         </header>
         <h1>Txto aqui que é titulo do post e é grande o suficiente pra quebrar uma linha nesse tamanho pq não cabe tudo numa linha</h1>
         <ul>

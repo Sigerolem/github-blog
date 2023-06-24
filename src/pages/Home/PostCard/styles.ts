@@ -3,12 +3,16 @@ import styled from 'styled-components';
 export const CardContainer = styled.div`
   background-color: ${({ theme }) => theme.colors['base-post']};
   border-radius: 10px;
+  border: 2px solid transparent;
   padding: 2rem;
   
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
+
+  transition: border .2s;
+  cursor: pointer;
 
   position: relative;
   
@@ -46,5 +50,9 @@ export const CardContainer = styled.div`
       bottom: 1.75rem;
       left: 0;
     }
+  }
+
+  &:hover {
+    border: 2px solid ${({ theme }) => theme.colors['base-border']};
   }
 `
