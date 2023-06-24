@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HomeContainer = styled.main`
   max-width: 54rem;
-  margin: -5rem auto 0;
+  margin: -5rem 1rem 6rem;
 `
 
 export const SerchForm = styled.form`
@@ -39,4 +39,11 @@ export const SerchForm = styled.form`
       line-height: 1.6;
     } 
   }
+`
+
+export const PostsContainer = styled.div`
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 `

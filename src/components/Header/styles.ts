@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import headerBg from '../../assets/banner.svg'
 
-export const HeaderContent = styled.header`
+export const HeaderContainer = styled.header`
   background: url(${headerBg}) no-repeat center;
+  width: 100%;
   height: 18.5rem;
   
   display: flex;
