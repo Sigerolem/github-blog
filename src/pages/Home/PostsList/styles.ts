@@ -34,11 +34,26 @@ export const SerchForm = styled.form`
       line-height: 1.6;
     } 
   }
-`
+
+  @media (max-width: 750px) {
+    margin-top: 1.5rem;
+  }
+  `
 
 export const PostsContainer = styled.section`
   margin-top: 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+
+  @media (max-width: 750px) {
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    margin-top: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `

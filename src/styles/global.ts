@@ -29,5 +29,27 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
     box-shadow: 0 0 0px 2px ${({ theme }) => theme.colors['brand-blue']}; 
   }
+
+  ::-webkit-scrollbar {
+    width: .75rem;
+    height: .75rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors['base-input']};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colors['base-profile']};
+    &:hover {
+      background: ${({ theme }) => theme.colors['base-border']};
+    }
+  }
+
+  @media (max-width: 750px) {
+    html {
+      font-size: 90%;
+    }
+  }
 `
 
