@@ -1,14 +1,15 @@
 import { RouterProvider, createHashRouter } from 'react-router-dom';
-import { Home, homeLoader } from './pages/Home';
 import { DefaultLayout } from './layouts/DefaultLayout';
+import { Home, homeLoader } from './pages/Home';
 import { Post, postLoader } from './pages/Post';
 
 export function Router() {
   const base = import.meta.env.BASE_URL
+  console.log(base)
 
   const router = createHashRouter([
     {
-      path: base,
+      path: `/`,
       element: <DefaultLayout />,
       children: [
         {
@@ -17,13 +18,13 @@ export function Router() {
           loader: homeLoader
         },
         {
-          path: `${base}/post/:id`,
+          path: `post/:id`,
           element: <Post />,
           loader: postLoader
         },
         {
-          path: `${base}/*`,
-          element: <h1>Erro, rota errada</h1>
+          path: '*',
+          element: <h1>Rota inválida</h1>
         }
       ]
     }
