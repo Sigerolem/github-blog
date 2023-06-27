@@ -91,7 +91,13 @@ export const ContentContainer = styled.section`
 
   pre {
     background-color: ${({ theme }) => theme.colors['base-post']};
-    padding: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+  }
+  
+  code {
+    background-color: ${({ theme }) => theme.colors['base-post']};
+    padding: 0.25rem;
     border-radius: 6px;
   }
 
