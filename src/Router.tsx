@@ -4,9 +4,6 @@ import { Home, homeLoader } from './pages/Home';
 import { Post, postLoader } from './pages/Post';
 
 export function Router() {
-  const base = import.meta.env.BASE_URL
-  console.log(base)
-
   const router = createHashRouter([
     {
       path: `/`,
