@@ -14,7 +14,6 @@ export const CardContainer = styled.div`
   transition: border .2s;
   cursor: pointer;
 
-  position: relative;
   
   header {
     display: flex;
@@ -35,6 +34,7 @@ export const CardContainer = styled.div`
   
   p {
     overflow: hidden;
+    position: relative;
     /* text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -47,7 +47,7 @@ export const CardContainer = styled.div`
       height: 1.6rem;
       background: linear-gradient(transparent 10%, ${({ theme }) => theme.colors['base-post']} 75%);
       position: absolute;
-      bottom: 1.75rem;
+      bottom: -.25rem;
       left: 0;
     }
   }
